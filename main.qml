@@ -42,10 +42,10 @@ ApplicationWindow {
                         }
                     }
                 }
+            }
 
-                model: ListModel {
-                    id: listModel
-                }
+            model: ListModel {
+                id: listModel
             }
         }
     }
