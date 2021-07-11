@@ -48,17 +48,32 @@ ApplicationWindow {
                 id: listModel
             }
         }
+    }
 
+    TextField {
+        id: inputField
+        placeholderText: qsTr("Enter the note")
+        anchors.top: scroll.bottom
+        anchors.topMargin: 35
+        width: 490
+        height: 50
+        x : 20
+    }
 
-        TextField {
-            id: inputField
-            placeholderText: qsTr("Enter the note")
-            anchors.top: scroll.bottom
-            anchors.topMargin: 35
-            width: 490
-            height: 50
-            x : 20
+    Button {
+        text: qsTr("Add")
+        anchors.left: inputField.right
+        anchors.leftMargin: 10
+        anchors.top: scroll.bottom
+        anchors.topMargin: 35
+        width: 100
+        height: 50
+
+        onClicked: {
+            if (inputField.text !== "") {
+                listModel.append({note : inputField.text})
+                inputField.text = ""
+            }
         }
-
     }
 }
