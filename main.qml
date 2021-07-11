@@ -48,5 +48,17 @@ ApplicationWindow {
                 id: listModel
             }
         }
+
+
+        TextField {
+            id: inputField
+            placeholderText: qsTr("Enter the note")
+            anchors.top: scroll.bottom
+            anchors.topMargin: 35
+            width: 490
+            height: 50
+            x : 20
+        }
+
     }
 }
