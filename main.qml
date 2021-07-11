@@ -19,10 +19,29 @@ ApplicationWindow {
         ListView {
             id: listView
             width: parent.width
-            model: 20
+
             delegate: ItemDelegate {
-                text: "Item " + (index + 1)
-                width: listView.width
+                text: note
+                width: 450
+                height: 50
+
+                CheckBox {
+                    id: cBox
+                    anchors.left: parent.right
+                    width: 50
+                }
+
+                Button {
+                    anchors.left: cBox.right
+                    width: 100
+                    text: "Remove"
+
+                    onClicked: {
+                        if (cBox.checkState == Qt.Checked) {
+                            listModel.remove(index)
+                        }
+                    }
+                }
             }
         }
     }
