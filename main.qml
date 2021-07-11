@@ -42,6 +42,10 @@ ApplicationWindow {
                         }
                     }
                 }
+
+                model: ListModel {
+                    id: listModel
+                }
             }
         }
     }
